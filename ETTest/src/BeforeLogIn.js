@@ -1,31 +1,51 @@
 import React from "react";
-import { Text, TouchableOpacity, View, ImageBackground, Button } from "react-native";
+import { Text, TouchableOpacity, View, ImageBackground, StyleSheet } from "react-native";
 import Swiper from "react-native-web-swiper";
 
 export default function beforeLogIn() {
   return (
     <View style={{flex:1}}>
-      <View style={{flex:1}}>
+      <View style={{flex:9}}>
           <Swiper 
             horizontal
+            loop='true'
             controlsProps={{
               dotsTouchable: true,
               nextTitle: '',
-              prevTitle: ''
+              prevTitle: '',
             }}
           >
-              <View>
-                  <ImageBackground source={require('../assets/beforeLogIn_1.png')} style={{width:'100%', height: '100%'}}>
-                    <View style={{flex:3, alignItems: 'center', justifyContent: 'flex-end'}}>
-                      <Button title="로그인"  />
-                    </View>
-                    <View style={{flex: 1}} />
-                  </ImageBackground>
-              </View>
-              <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(20,200,20,0.3)"}}/>
-              <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(200,20,20,0.3)"}}/>
+            <View>
+              <ImageBackground source={require('../assets/beforeLogIn_1.png')} style={{width:'100%', height: '100%'}}>
+                <View style={{flex:1, alignItems: 'center', justifyContent: 'flex-end'}}>
+
+                </View>
+              </ImageBackground>
+            </View>
+            <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(20,200,20,0.3)"}}/>
+            <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(200,20,20,0.3)"}}/>
           </Swiper>
+      </View>
+      <View style={{flex: 1}}>
+        <TouchableOpacity style={styles.button} >
+          <Text style={styles.title}>로그인</Text>
+        </TouchableOpacity>
       </View>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: '#43cd76',
+    width: '100%',
+    height: '100%',
+    padding: 15,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  title: {
+    fontSize: 20,
+    color: 'white'
+  }
+});
