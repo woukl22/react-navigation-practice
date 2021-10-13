@@ -1,8 +1,9 @@
 import React from "react";
 import { Text, TouchableOpacity, View, ImageBackground, StyleSheet } from "react-native";
 import Swiper from "react-native-web-swiper";
+import LogIn from './LogIn';
 
-export default function beforeLogIn() {
+const BeforeLogIn = ({navigation}) => {
   return (
     <View style={{flex:1}}>
       <View style={{flex:9}}>
@@ -16,18 +17,14 @@ export default function beforeLogIn() {
             }}
           >
             <View>
-              <ImageBackground source={require('../assets/beforeLogIn_1.png')} style={{width:'100%', height: '100%'}}>
-                <View style={{flex:1, alignItems: 'center', justifyContent: 'flex-end'}}>
-
-                </View>
-              </ImageBackground>
+              <ImageBackground source={require('../../assets/beforeLogIn_1.png')} style={{width:'100%', height: '100%'}}/>
             </View>
             <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(20,200,20,0.3)"}}/>
             <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(200,20,20,0.3)"}}/>
           </Swiper>
       </View>
       <View style={{flex: 1}}>
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('LogIn')} >
           <Text style={styles.title}>로그인</Text>
         </TouchableOpacity>
       </View>
@@ -49,3 +46,5 @@ const styles = StyleSheet.create({
     color: 'white'
   }
 });
+
+export default BeforeLogIn;
