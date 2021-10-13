@@ -8,7 +8,7 @@ import {HomeScreen, SettingsScreen} from './Screen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function Home() {
+const Home = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} options={{headerShown: false}} />
@@ -17,7 +17,7 @@ function Home() {
   )
 }
 
-export default function Main() {
+const Main = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -26,3 +26,5 @@ export default function Main() {
     </NavigationContainer>
   );
 }
+
+export default Main;

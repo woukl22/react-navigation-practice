@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageBackground } from "react-native";
 
-function Loading() {
+const Loading = () => {
   return (
       <ImageBackground
           source={require('../assets/Loading.png')}    

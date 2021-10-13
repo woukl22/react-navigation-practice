@@ -7,7 +7,7 @@ import LogIn from './LogIn';
 
 const Stack = createNativeStackNavigator();
 
-export default function Authentication() {
+ const Authentication = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="BeforeLogIn">
@@ -17,3 +17,5 @@ export default function Authentication() {
     </NavigationContainer>
   )
 }
+
+export default Authentication;

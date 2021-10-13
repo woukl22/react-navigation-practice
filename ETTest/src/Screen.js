@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
-export function HomeScreen() {
+export const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <Text>Home!</Text>
@@ -11,7 +11,7 @@ export function HomeScreen() {
   );
 }
 
-export function SettingsScreen() {
+export const SettingsScreen = () => {
   return (
     <View style={styles.container}>
       <Text>Settings!</Text>
