@@ -1,7 +1,6 @@
 import React from 'react';
 import Loading from './src/Loading';
-import Main from './src/Main';
-import Authentication from './src/Authentication/Authentication';
+import { Authentication, Main } from './src/navigations';
 
 export default class App extends React.Component {
   state = {
