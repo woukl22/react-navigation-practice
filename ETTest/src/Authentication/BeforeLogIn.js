@@ -2,6 +2,7 @@ import React from "react";
 import { Text, TouchableOpacity, View, ImageBackground, StyleSheet } from "react-native";
 import Swiper from "react-native-web-swiper";
 import LogIn from './LogIn';
+import Main from '../navigations/Main';
 
 const BeforeLogIn = ({navigation}) => {
   return (
@@ -23,9 +24,12 @@ const BeforeLogIn = ({navigation}) => {
             <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(200,20,20,0.3)"}}/>
           </Swiper>
       </View>
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, flexDirection: 'row'}}>
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('LogIn')} >
           <Text style={styles.title}>로그인</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={()=> {<Main/>} }>
+          <Text style={styles.title}>홈으로</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -34,6 +38,7 @@ const BeforeLogIn = ({navigation}) => {
 
 const styles = StyleSheet.create({
   button: {
+    flex: 1,
     backgroundColor: '#43cd76',
     width: '100%',
     height: '100%',

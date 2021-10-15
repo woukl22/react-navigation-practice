@@ -3,10 +3,9 @@ import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { BeforeLogIn, LogIn, SignUp } from '../Authentication';
-
 const Stack = createNativeStackNavigator();
 
- const Authentication = () => {
+const Authentication = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="BeforeLogIn">
