@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
+import { Alert, TouchableOpacity, StyleSheet, Text, View, TextInput } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { SignUp } from './SignUp';
 
 const LogIn = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -48,6 +49,12 @@ const LogIn = ({ navigation }) => {
             textContentType="none" // ios only
             underlineColorAndroid="transparent" // Android only
           />
+          <TouchableOpacity style={styles.button} onPress={()=> Alert.alert('로그인!')} >
+            <Text style={{justifyContent: 'center', color: 'white'}}>로그인</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('SignUp')} >
+            <Text style={{justifyContent: 'center', color: 'white'}}>회원가입</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </KeyboardAwareScrollView>
@@ -87,6 +94,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#43cd76',
+    height: 40,
+    marginTop: 20,
+    marginHorizontal: 20,
+    padding: 10,
+  }
 });
 
 export default LogIn;
