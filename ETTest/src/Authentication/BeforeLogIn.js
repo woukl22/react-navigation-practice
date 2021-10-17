@@ -28,7 +28,7 @@ const BeforeLogIn = ({navigation}) => {
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('LogIn')} >
           <Text style={styles.title}>로그인</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={()=> {<Main/>} }>
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.reset({routes: [{name: 'HomeComponent'}]}) }>
           <Text style={styles.title}>홈으로</Text>
         </TouchableOpacity>
       </View>

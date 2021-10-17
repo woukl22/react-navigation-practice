@@ -1,6 +1,6 @@
 import React from 'react';
 import Loading from './src/Loading';
-import { Authentication, Main } from './src/navigations';
+import Main from './src/navigations/Main';
 
 export default class App extends React.Component {
   state = {
@@ -11,6 +11,6 @@ export default class App extends React.Component {
     setTimeout(() => {this.setState({isLoading: false})}, 3000);
   }
   render() {
-    return this.state.isLoading ? <Loading /> : this.state.isLogin ? <Main /> : <Authentication />;
+    return this.state.isLoading ? <Loading /> : <Main state={this.state.isLogin} />;
   }
 }
