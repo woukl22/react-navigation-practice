@@ -4,11 +4,23 @@ import { StatusBar } from 'expo-status-bar';
 import PropTypes from 'prop-types';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { SignUp } from './SignUp';
+import { login } from '../utils/firebase';
 
 const LogIn = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isFocused, setIsFocused] = useState(false);
+
+  const _handleLoginButtonPress = async () => {
+    try {
+      const user = await login({ email, password });
+      Alert.alert('Login Success', user.email);
+      navigation.reset({routes: [{name: 'HomeComponent'}]})
+    } catch(e) {
+      Alert.alert('Login Error', e.message);
+    }
+  };
+
   return (
     <KeyboardAwareScrollView
       contentContainerStyle={{flex:1}}
@@ -49,11 +61,11 @@ const LogIn = ({ navigation }) => {
             textContentType="none" // ios only
             underlineColorAndroid="transparent" // Android only
           />
-          <TouchableOpacity style={styles.button} onPress={()=> Alert.alert('로그인!')} >
+          <TouchableOpacity style={styles.loginButton} onPress={_handleLoginButtonPress} >
             <Text style={{justifyContent: 'center', color: 'white'}}>로그인</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('SignUp')} >
-            <Text style={{justifyContent: 'center', color: 'white'}}>회원가입</Text>
+          <TouchableOpacity style={styles.signupButton} onPress={()=> navigation.navigate('SignUp')} >
+            <Text style={{justifyContent: 'center', color: '#43cd76'}}>회원가입</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -81,7 +93,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    marginTop: 20,
+    marginTop: 10,
     marginLeft: 20,
     color: '#a6a6a6',
   },
@@ -94,11 +106,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
   },
-  button: {
+  loginButton: {
     alignItems: 'center',
     backgroundColor: '#43cd76',
     height: 40,
-    marginTop: 20,
+    marginTop: 10,
+    marginHorizontal: 20,
+    padding: 10,
+  },
+  signupButton: {
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+    marginTop: 10,
     marginHorizontal: 20,
     padding: 10,
   }
