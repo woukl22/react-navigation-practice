@@ -17,11 +17,15 @@ const BeforeLogIn = ({navigation}) => {
               prevTitle: '',
             }}
           >
-            <View>
-              <ImageBackground source={require('../../assets/beforeLogIn_1.png')} style={{width:'100%', height: '100%'}}/>
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <ImageBackground source={require('../../assets/logo.png')} style={{width:'100%', height: '90%'}}/>
             </View>
-            <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(20,200,20,0.3)"}}/>
-            <View style={{flex:1,alignItems:"center",justifyContent:"center",backgroundColor:"rgba(200,20,20,0.3)"}}/>
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <ImageBackground source={require('../../assets/bflogin_2.png')} style={{width:'100%', height: '100%'}}/>
+            </View>
+            <View style={{alignItems: 'center', justifyContent: 'center'}}>
+              <ImageBackground source={require('../../assets/bflogin_3.png')} style={{width:'100%', height: '100%'}}/>
+            </View>
           </Swiper>
       </View>
       <View style={{flex: 1, flexDirection: 'row'}}>
