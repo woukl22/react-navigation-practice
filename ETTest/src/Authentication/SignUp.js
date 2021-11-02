@@ -48,7 +48,7 @@ const SignUp = ({navigation}) => {
   };
 
   return (
-    <KeyboardAwareScrollView contentContainerStyle={{flex: 1}} extraScrollHeight={20}>
+    <KeyboardAwareScrollView contentContainerStyle={{flex: 1, backgroundColor: 'white'}} extraScrollHeight={20}>
       <View style={styles.container}>
         <Text style={styles.text}>Name</Text>
           <TextInput

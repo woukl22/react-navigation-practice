@@ -18,7 +18,7 @@ const BeforeLogIn = ({navigation}) => {
             }}
           >
             <View style={styles.screen}>
-              <ImageBackground source={require('../../assets/logo.png')} style={{width:'100%', height: '90%'}}/>
+              <ImageBackground source={require('../../assets/Logo.png')} style={{width:'100%', height: '100%'}}/>
             </View>
             <View style={styles.screen}>
               <ImageBackground source={require('../../assets/bflogin_2.png')} style={{width:'100%', height: '100%'}}/>
@@ -31,9 +31,6 @@ const BeforeLogIn = ({navigation}) => {
       <View style={styles.bottom}>
         <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('LogIn')} >
           <Text style={styles.title}>로그인</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={()=> navigation.reset({routes: [{name: 'HomeComponent'}]}) }>
-          <Text style={styles.title}>홈으로</Text>
         </TouchableOpacity>
       </View>
     </View>
