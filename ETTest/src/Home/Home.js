@@ -5,7 +5,6 @@ import { StatusBar } from 'expo-status-bar';
 export const Home = () => {
   return (
     <View style={styles.container}>
-      <Text>Home!</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -18,4 +17,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
